@@ -1,4 +1,5 @@
 import br.com.alura.calculos.CalculadoraDeTempo;
+import br.com.alura.calculos.FiltroRecomendacao;
 import br.com.alura.modelos.Filme;
 import br.com.alura.modelos.Serie;
 
@@ -29,7 +30,7 @@ public class Principal {
         calculadora.inclui(meuFilme);
         System.out.println(calculadora.getTempoTotal());
 
-        // FiltroRecomendacao filtro = new FiltroRecomendacao();
-        // filtro.filtra(meuFilme);
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
     }
 }
