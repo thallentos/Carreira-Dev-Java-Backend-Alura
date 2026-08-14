@@ -26,7 +26,7 @@ public class Audio {
         return totalDeReproducoes;
     }
 
-    public int getCurtidas() {
+    public int getTotalCurtidas() {
         return totalCurtidas;
     }
 
