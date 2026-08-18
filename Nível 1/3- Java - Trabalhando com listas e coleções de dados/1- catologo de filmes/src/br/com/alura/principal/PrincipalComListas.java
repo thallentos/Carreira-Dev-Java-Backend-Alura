@@ -2,6 +2,7 @@ package br.com.alura.principal;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 import br.com.alura.modelos.Filme;
 import br.com.alura.modelos.Serie;
@@ -40,5 +41,9 @@ public class PrincipalComListas {
         System.out.println("Lista de filmes e séries ordenada por nome: ");
         Collections.sort(lista);
         System.out.println(lista);
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Lista de filmes e séries ordenada por ano de lançamento: ");
+        System.out.println(lista);
+
     }
 }
