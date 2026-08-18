@@ -1,15 +1,16 @@
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
         try (Scanner leitura = new Scanner(System.in)) {
-            System.out.println("Digite o limite do cartão: ");
+            System.out.println("Digite o limite do cartao: ");
             double limite = leitura.nextDouble();
             CartaoDeCredito cartao = new CartaoDeCredito(limite);
 
             int sair = 1;
             while (sair != 0) {
-                System.out.println("Digite a descrição da compra: ");
+                System.out.println("Digite a descricao da compra: ");
                 String descricao = leitura.next();
 
                 System.out.println("Digite o valor da compra: ");
@@ -26,6 +27,16 @@ public class Principal {
                     System.out.println("Saldo insuficiente para realizar a compra.");
                 }
             }
+
+            System.out.println("*************************");
+            System.out.println("Compras realizadas: ");
+            Collections.sort(cartao.getCompras());
+            for (Compra c : cartao.getCompras()) {
+                System.out.println(c.getDescricao() + " - " + "Valor: " + c.getValor());
+            }
+            System.out.println("*************************");
+
+            System.out.println("Saldo do cartao: " + cartao.getSaldo());
         }
     }
 }
