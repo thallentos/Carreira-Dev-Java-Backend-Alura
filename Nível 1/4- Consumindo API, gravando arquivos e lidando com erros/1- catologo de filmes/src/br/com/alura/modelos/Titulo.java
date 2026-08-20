@@ -1,7 +1,11 @@
 package br.com.alura.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo implements Comparable<Titulo> {
+    @SerializedName("Title")
     private String nome;
+    @SerializedName("Year")
     private int anoDeLancamento;
     public boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
@@ -69,4 +73,11 @@ public class Titulo implements Comparable<Titulo> {
         return this.getNome().compareTo(outroTitulo.getNome());
 
     }
+
+    @Override
+    public String toString() {
+        return "[nome=" + nome + ", anoDeLancamento=" + anoDeLancamento + "]";
+    }
+
+    
 }
